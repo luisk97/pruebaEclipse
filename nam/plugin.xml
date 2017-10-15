@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Sample Category"
+            id="nam">
+      </category>
+      <view
+            name="Sample View"
+            inject="true"
+            icon="icons/sample.png"
+            category="nam"
+            class="nam.views.SampleView"
+            id="nam.views.SampleView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               id="nam.views.SampleView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+   		<launchConfigurationType
+   			delegate="nam.launcher.Launcher"
+   			delegateDescription="Launches the application with the arguments provided by the SampleView of the nam proyect"
+   			id="nam.launchConfigurationType1"
+   			modes="run"
+   			name="namLauncher"
+   			public="true"
+   			sourceLocatorId="org.eclipse.jdt.launching.sourceLocator.JavaSourceLookupDirector"
+   			sourcePathComputerId="org.eclipse.jdt.launching.sourceLookup.javaSourcePathComputer">
+   		</launchConfigurationType>
+   	</extension>
+   	<extension point="org.eclipse.debug.ui.launchConfigurationTabGroups"> 
+   		<launchConfigurationTabGroup
+   			class="nam.views.LauncherUI" 
+   			description="This is the configuration tab group of the DemoLauncher" 
+   			id="nam.launchConfigurationTabGroup1" 
+   			type="nam.launchConfigurationType1"> 
+   		</launchConfigurationTabGroup>
+   	</extension>
+   	
+</plugin>

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Nam
+Bundle-SymbolicName: nam;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: nam.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jdt.launching;bundle-version="3.9.0",
+ org.eclipse.core.resources;bundle-version="3.12.0",
+ org.eclipse.debug.ui,
+ org.eclipse.jdt.debug.ui,
+ org.eclipse.ui.editors;bundle-version="3.11.0",
+ org.eclipse.jface.text;bundle-version="3.12.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
